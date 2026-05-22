@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<meta content="Hope Project Addiction Recovery Services Co-operative Limited – guiding recovery through compassionate counseling and community support in Point Edward, Nova Scotia." name="description"/>
+<meta content="Hope Project – Navigating Recovery Together" property="og:title"/>
+<meta content="Individual counseling, group support, and rehabilitation information for those affected by psychological trauma and substance use disorder." property="og:description"/>
+<meta content="https://images.pexels.com/photos/9807534/pexels-photo-9807534.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<title>Hope Project – Point Edward, NS</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<style>
+    :root {
+      --primary: #2C5F7C;
+      --secondary: #6B8E6B;
+      --accent: #D4A373;
+      --text: #2C2C2C;
+      --background: #F9F6F0;
+      --muted-bg: #E8E0D5;
+      --heading-font: 'Merriweather', Georgia, serif;
+      --body-font: 'Open Sans', Helvetica, Arial, sans-serif;
+      --shadow-soft: 0 8px 24px rgba(44,44,44,0.06);
+      --shadow-card: 0 12px 28px rgba(44,44,44,0.08);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--body-font);
+      color: var(--text);
+      background: var(--background);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4 {
+      font-family: var(--heading-font);
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+    }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { display: block; max-width: 100%; height: auto; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+    
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: transparent;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      padding: 0.75rem 0;
+    }
+    .site-header.scrolled {
+      background: rgba(249,246,240,0.92);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 2px 12px rgba(44,44,44,0.04);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .site-title {
+      font-family: var(--heading-font);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    .site-title span { display: block; font-size: 0.75rem; font-weight: 400; opacity: 0.7; letter-spacing: 0.02em; }
+    .header-links {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .header-links a { color: var(--text); border-bottom: 2px solid transparent; transition: border-color 0.2s; }
+    .header-links a:hover { border-bottom-color: var(--accent); text-decoration: none; }
+
+    
+    .proof-strip {
+      background: var(--muted-bg);
+      padding: 0.6rem 0;
+      font-size: 0.85rem;
+      color: #3a3a3a;
+      border-bottom: 1px solid rgba(44,44,44,0.04);
+    }
+    .proof-strip .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 2rem;
+      align-items: center;
+    }
+    .proof-strip strong { font-weight: 600; }
+    .proof-strip a { font-weight: 600; }
+
+    
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      background: var(--background);
+      margin-top: -1px;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('https://images.pexels.com/photos/9807534/pexels-photo-9807534.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940') no-repeat center center/cover;
+      filter: saturate(0.92) brightness(1.02);
+      z-index: 0;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(249,246,240,0.70) 0%, rgba(249,246,240,0.20) 70%);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+      padding: 4rem 0 5rem;
+    }
+    .hero-content h1 {
+      font-size: clamp(2.4rem, 8vw, 4.2rem);
+      color: var(--primary);
+      line-height: 1.1;
+      margin-bottom: 1.2rem;
+      text-shadow: 0 2px 8px rgba(249,246,240,0.3);
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #2a2a2a;
+      max-width: 580px;
+      margin-bottom: 2.2rem;
+      font-weight: 400;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem 2rem;
+      align-items: center;
+    }
+    .hero-actions a {
+      font-weight: 600;
+      font-size: 1rem;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 2px;
+      transition: opacity 0.2s;
+    }
+    .hero-actions a:hover { opacity: 0.7; text-decoration: none; }
+    .hero-actions .source-link {
+      border-bottom-color: var(--secondary);
+      font-weight: 500;
+    }
+
+    
+    .wave-divider {
+      width: 100%;
+      height: 48px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 48'%3E%3Cpath d='M0,24 C200,0 400,48 600,24 C800,0 1000,48 1200,24 L1200,48 L0,48 Z' fill='%23E8E0D5' opacity='0.5'/%3E%3C/svg%3E") repeat-x center/cover;
+      margin: -1px 0;
+    }
+
+    
+    section { padding: 4.5rem 0; }
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: var(--primary);
+      position: relative;
+      display: inline-block;
+    }
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 48px;
+      height: 3px;
+      background: var(--accent);
+      margin-top: 0.5rem;
+    }
+
+    
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem 2.5rem;
+      align-items: center;
+    }
+    .about-text p { font-size: 1.05rem; margin-bottom: 1rem; }
+    .about-image {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      background: var(--muted-bg);
+    }
+    .about-image img { width: 100%; height: 400px; object-fit: cover; }
+
+    
+    .services-section {
+      background: var(--background);
+      position: relative;
+    }
+    .services-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60' opacity='0.08'%3E%3Cpath d='M0,30 Q25,10 50,30 T100,30 T150,30 T200,30' stroke='%232C5F7C' fill='none' stroke-width='1.5'/%3E%3C/svg%3E") repeat;
+      pointer-events: none;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+    .service-card {
+      background: white;
+      border-radius: 24px;
+      padding: 2rem 1.5rem;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.25s ease, box-shadow 0.3s;
+      border: 1px solid rgba(44,44,44,0.03);
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 36px rgba(44,44,44,0.10);
+    }
+    .service-icon {
+      font-size: 2.2rem;
+      margin-bottom: 0.75rem;
+      color: var(--secondary);
+    }
+    .service-card h3 { font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--primary); }
+    .service-card p { font-size: 0.95rem; color: #3a3a3a; }
+
+    
+    .why-section { background: var(--muted-bg); }
+    .why-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.8rem;
+      margin-top: 1rem;
+    }
+    .why-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .why-icon { font-size: 1.8rem; color: var(--accent); line-height: 1; }
+    .why-item h4 { font-size: 1.1rem; margin-bottom: 0.2rem; color: var(--primary); }
+    .why-item p { font-size: 0.9rem; color: #3a3a3a; }
+
+    
+    .process-timeline {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      position: relative;
+      padding: 1.5rem 0;
+    }
+    .process-timeline::before {
+      content: '';
+      position: absolute;
+      top: 2.8rem;
+      left: 2rem;
+      right: 2rem;
+      height: 3px;
+      background: var(--secondary);
+      opacity: 0.25;
+      z-index: 0;
+    }
+    .step {
+      flex: 1 1 160px;
+      position: relative;
+      z-index: 1;
+      padding: 0.5rem 0.5rem 1rem;
+      text-align: center;
+    }
+    .step-marker {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      margin: 0 auto 1rem;
+      box-shadow: 0 4px 12px rgba(44,95,124,0.2);
+    }
+    .step h4 { font-size: 1.1rem; color: var(--primary); }
+    .step p { font-size: 0.85rem; color: #3a3a3a; }
+
+    
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+    }
+    .gallery-grid img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.2s;
+      cursor: pointer;
+    }
+    .gallery-grid img:hover { transform: scale(1.01); }
+    .gallery-grid .tall { grid-row: span 2; height: 100%; }
+
+    
+    .contact-section { background: var(--muted-bg); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+    .contact-details p { margin-bottom: 0.6rem; font-size: 1rem; }
+    .contact-details a { font-weight: 600; }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      font-family: var(--body-font);
+      font-size: 0.95rem;
+      background: white;
+      margin-bottom: 1rem;
+    }
+    .contact-form button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .contact-form button:hover { background: #1f4a63; }
+
+    
+    .site-footer {
+      background: #1f2e3a;
+      color: #d9d0c5;
+      padding: 2.5rem 0 1.5rem;
+      font-size: 0.9rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2rem;
+    }
+    .footer-grid h4 { color: #e5dcd0; margin-bottom: 0.8rem; font-size: 1rem; }
+    .footer-grid a { color: #c4b8a8; }
+    .footer-grid a:hover { color: white; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-top: 2rem;
+      padding-top: 1.2rem;
+      text-align: center;
+      font-size: 0.8rem;
+    }
+
+    
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    .lightbox.open { opacity: 1; pointer-events: auto; }
+    .lightbox img { max-width: 90vw; max-height: 85vh; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+
+    
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-grid img { height: 180px; }
+      .hero-content h1 { font-size: 2.4rem; }
+      .header-links { display: none; }
+      .process-timeline { flex-direction: column; gap: 1.5rem; }
+      .process-timeline::before { display: none; }
+      .step { text-align: left; display: flex; gap: 1rem; align-items: center; }
+      .step-marker { margin: 0; flex-shrink: 0; }
+    }
+    @media (max-width: 480px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<header class="site-header" id="siteHeader">
+<div class="container header-inner">
+<div class="site-title">Hope Project <span>Addiction Recovery Co‑operative</span></div>
+<div class="header-links">
+<a href="#about">About</a>
+<a href="#services">Paths</a>
+<a href="#process">Steps</a>
+<a href="#gallery">Scenes</a>
+<a href="#contact">Contact</a>
+</div>
+</div>
+</header>
+<div class="proof-strip">
+<div class="container">
+<span><strong>Point Edward, Nova Scotia</strong> — community-based nonprofit</span>
+<span><strong>Category:</strong> Addiction Recovery Services Co‑operative</span>
+<a href="http://www.cbhopeproject.ca" rel="noopener" target="_blank">Original source record →</a>
+</div>
+</div>
+<section class="hero" id="hero">
+<div class="hero-bg"></div>
+<div class="hero-overlay"></div>
+<div class="container hero-content">
+<h1>Navigating Recovery Together</h1>
+<p>Hope Project offers individual counseling, group support, and rehabilitation information for those affected by psychological trauma and substance use disorder in Point Edward, Nova Scotia.</p>
+<div class="hero-actions">
+<a href="#summary" id="summary">Read the summary</a>
+<a class="source-link" href="http://www.cbhopeproject.ca" rel="noopener" target="_blank">Check source record →</a>
+</div>
+</div>
+</section>
+<div class="wave-divider"></div>
+<div id="summary" style="position:relative; top:-60px;"></div>
+<section id="about">
+<div class="container">
+<h2 class="section-title">About Hope Project</h2>
+<div class="about-grid">
+<div class="about-text">
+<p>Hope Project Addiction Recovery Services Co-operative Limited promotes health by providing individuals suffering from psychological trauma and substance use disorder with access to individual counseling, rehabilitation information and classes, and group support programs. Located in Point Edward, Nova Scotia, we are a community-focused nonprofit dedicated to fostering recovery.</p>
+<p style="margin-top:1rem; font-weight:600; color:var(--primary);">Serving Point Edward and surrounding communities in Nova Scotia.</p>
+</div>
+<div class="about-image">
+<img alt="Counselor speaking with client in cozy office" height="800" loading="lazy" src="https://images.pexels.com/photos/5699473/pexels-photo-5699473.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" width="1200"/>
+</div>
+</div>
+</div>
+</section>
+<div class="wave-divider"></div>
+<section class="services-section" id="services">
+<div class="container">
+<h2 class="section-title">Support Paths</h2>
+<div class="services-grid">
+<div class="service-card">
+<div class="service-icon">🧭</div>
+<h3>Individual Counseling</h3>
+<p>One-on-one sessions to address psychological trauma and substance use disorder.</p>
+</div>
+<div class="service-card">
+<div class="service-icon">🫂</div>
+<h3>Group Support Programs</h3>
+<p>Peer-led group meetings providing shared experiences and mutual encouragement.</p>
+</div>
+<div class="service-card">
+<div class="service-icon">📘</div>
+<h3>Rehabilitation Information &amp; Classes</h3>
+<p>Educational resources and classes to support recovery and informed decision-making.</p>
+</div>
+<div class="service-card">
+<div class="service-icon">🤝</div>
+<h3>Community Outreach</h3>
+<p>Connecting individuals to local resources and building a supportive network.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="why-section" id="why">
+<div class="container">
+<h2 class="section-title">Why We’re Here</h2>
+<div class="why-list">
+<div class="why-item">
+<span class="why-icon">📍</span>
+<div><h4>Community-based</h4><p>Point Edward, NS — local support for local people.</p></div>
+</div>
+<div class="why-item">
+<span class="why-icon">🌱</span>
+<div><h4>Trauma-informed</h4><p>Counseling approach that respects each person’s story.</p></div>
+</div>
+<div class="why-item">
+<span class="why-icon">👥</span>
+<div><h4>Peer support</h4><p>Group programs built on shared experience and trust.</p></div>
+</div>
+<div class="why-item">
+<span class="why-icon">📖</span>
+<div><h4>Accessible info</h4><p>Clear rehabilitation information and classes for all.</p></div>
+</div>
+</div>
+</div>
+</section>
+<div class="wave-divider"></div>
+<section id="process">
+<div class="container">
+<h2 class="section-title">Your Path Forward</h2>
+<div class="process-timeline">
+<div class="step">
+<div class="step-marker">1</div>
+<h4>Reach Out</h4>
+<p>Call or email us — no pressure, just a conversation.</p>
+</div>
+<div class="step">
+<div class="step-marker">2</div>
+<h4>Connect</h4>
+<p>We listen and share how we can walk alongside you.</p>
+</div>
+<div class="step">
+<div class="step-marker">3</div>
+<h4>Engage</h4>
+<p>Choose counseling, a group, or a class that fits your needs.</p>
+</div>
+<div class="step">
+<div class="step-marker">4</div>
+<h4>Grow</h4>
+<p>Build resilience, community, and a renewed sense of hope.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="gallery">
+<div class="container">
+<h2 class="section-title">Community Scenes</h2>
+<div class="gallery-grid">
+<img alt="Men having conversation" height="800" loading="lazy" onclick="openLightbox(this.src)" src="https://images.pexels.com/photos/1015568/pexels-photo-1015568.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" width="1200"/>
+<img alt="Person reading brochure" height="800" loading="lazy" onclick="openLightbox(this.src)" src="https://images.pexels.com/photos/9718807/pexels-photo-9718807.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" width="1200"/>
+<img alt="Two people walking on trail" height="800" loading="lazy" onclick="openLightbox(this.src)" src="https://images.pexels.com/photos/19969361/pexels-photo-19969361.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" width="1200"/>
+<img alt="Hands holding cup of tea" height="800" loading="lazy" onclick="openLightbox(this.src)" src="https://images.pexels.com/photos/34876346/pexels-photo-34876346.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" width="1200"/>
+</div>
+</div>
+</section>
+<div class="wave-divider"></div>
+<section class="contact-section" id="contact">
+<div class="container">
+<h2 class="section-title">Contact &amp; Next Steps</h2>
+<div class="contact-grid">
+<div class="contact-details">
+<p><strong>Hope Project Addiction Recovery Services Co‑operative Limited</strong></p>
+<p>12 WATSON RD, POINT EDWARD, NS</p>
+<p><a href="tel:+19025746761">(902) 574-6761</a></p>
+<p><a href="mailto:cbhopeproject@gmail.com">cbhopeproject@gmail.com</a></p>
+<p style="margin-top:1.2rem;"><a href="http://www.cbhopeproject.ca" rel="noopener" target="_blank">cbhopeproject.ca →</a></p>
+<p style="margin-top:0.8rem; font-size:0.95rem; background:white; padding:1rem; border-radius:16px;">
+<strong>What happens next?</strong> Reach out by phone or email. We’ll listen, answer your questions about programs, donations, or volunteering, and help you take the next step — no obligation.
+          </p>
+</div>
+<div class="contact-form">
+<form action="mailto:cbhopeproject@gmail.com" enctype="text/plain" method="post">
+<input name="name" placeholder="Your name" required="" type="text"/>
+<input name="phone" placeholder="Phone (optional)" type="text"/>
+<textarea name="message" placeholder="How can we support you?" required="" rows="4"></textarea>
+<button type="submit">Send message</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<footer class="site-footer">
+<div class="container">
+<div class="footer-grid">
+<div>
+<h4>Hope Project</h4>
+<p>12 WATSON RD<br/>POINT EDWARD, NS</p>
+<p><a href="tel:+19025746761">(902) 574-6761</a></p>
+<p><a href="mailto:cbhopeproject@gmail.com">cbhopeproject@gmail.com</a></p>
+</div>
+<div>
+<h4>Source &amp; record</h4>
+<p><a href="http://www.cbhopeproject.ca" rel="noopener" target="_blank">Original website →</a></p>
+</div>
+<div>
+<h4>Photo credits</h4>
+<p style="font-size:0.8rem; line-height:1.5;">
+            Gao Xinchao · Alex Green · Polina Zimmerman · Tima Miroshnichenko · Максим · sysedit2 · Helena Lopes · Sadock Kaisi · Masood Aslami · betül nur akyürek<br/>
+<a href="https://www.pexels.com" rel="noopener" target="_blank">Pexels</a>
+</p>
+</div>
+</div>
+<div class="footer-bottom">
+        © <span id="currentYear"></span> Hope Project Addiction Recovery Services Co‑operative Limited. All rights reserved.
+      </div>
+</div>
+</footer>
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+<img alt="Organization photo" height="800" id="lightboxImg" src="" width="1200"/>
+</div>
+<script>
+    // sticky header
+    const header = document.getElementById('siteHeader');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // lightbox
+    function openLightbox(src) {
+      const lb = document.getElementById('lightbox');
+      document.getElementById('lightboxImg').src = src;
+      lb.classList.add('open');
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+    }
+    document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeLightbox(); });
+
+    // dynamic year
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
